@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/8418/8418513.png" type="image/x-icon">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.14.0/jquery-ui.css">
+    <script src="jquery-ui-1.14.0/jquery-ui.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="brandName">Photo <span>Gallery</span></div>
+    </nav>
+
+    <!-- Image Caraousal -->
+    <div class="container">
+        <div class="box">
+            <span style="--i:1;"><img
+                    src="https://images.pexels.com/photos/2253879/pexels-photo-2253879.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt=""></span>
+            <span style="--i:2;"><img
+                    src="https://images.pexels.com/photos/39691/family-pier-man-woman-39691.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt=""></span>
+            <span style="--i:3;"><img
+                    src="https://images.pexels.com/photos/1682497/pexels-photo-1682497.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt=""></span>
+            <span style="--i:4;"><img
+                    src="https://images.pexels.com/photos/1835927/pexels-photo-1835927.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt=""></span>
+            <span style="--i:5;"><img
+                    src="https://images.pexels.com/photos/1683975/pexels-photo-1683975.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt=""></span>
+            <span style="--i:6;"><img
+                    src="https://images.pexels.com/photos/1914982/pexels-photo-1914982.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt=""></span>
+        </div>
+        <div class="btns">
+            <div class="btn prev"></div>
+            <div class="btn next"></div>
+        </div>
+    </div>
+
+    <!-- Images -->
+    <div class="imgContainer">
+        <div class="imgBox">
+            <div class="columns">
+                <img src="https://images.pexels.com/photos/4260753/pexels-photo-4260753.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/61129/pexels-photo-61129.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/1666467/pexels-photo-1666467.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/286625/pexels-photo-286625.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/1157399/pexels-photo-1157399.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/701016/pexels-photo-701016.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+            </div>
+
+            <div class="columns">
+                <img src="https://images.pexels.com/photos/1129615/pexels-photo-1129615.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/1655329/pexels-photo-1655329.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/1595388/pexels-photo-1595388.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/988622/pexels-photo-988622.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/2310609/pexels-photo-2310609.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/1619755/pexels-photo-1619755.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+            </div>
+
+            <div class="columns">
+                <img src="https://images.pexels.com/photos/2133/man-person-cute-young.jpg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/1231365/pexels-photo-1231365.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/1620653/pexels-photo-1620653.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/1694649/pexels-photo-1694649.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <img src="https://images.pexels.com/photos/4262424/pexels-photo-4262424.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+            </div>
+
+        </div>
+        <div id="dialog" title="Image Preview" style="display:none;">
+            <img id="dialog-img" src="" alt="Selected Image" style="max-width:100%; height:auto;">
+        </div>
+
+        <div class="button">
+            <a href="">More</a>
+        </div>
+    </div>
+    <script>
+        let prev = document.querySelector(".prev");
+        let next = document.querySelector(".next");
+        let box = document.querySelector(".box");
+
+        let degrees = 0;
+
+        prev.addEventListener("click", function () {
+            degrees += 60;
+            box.style.transform = `perspective(1000px) rotateY(${degrees}deg)`;
+        });
+
+        next.addEventListener("click", function () {
+            degrees -= 60;
+            box.style.transform = `perspective(1000px) rotateY(${degrees}deg)`;
+        });
+
+        // Automatic loads next image
+        setInterval(function () {
+            degrees += 60;
+            box.style.transform = `perspective(1000px) rotateY(${degrees}deg)`;
+        }, 4000);
+
+        // Initialize the dialog box
+        $(function () {
+            $("#dialog").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                },
+                modal: true,
+                width: 'auto',
+                height: 'auto',
+                buttons: {
+                    Close: function () {
+                        $(this).dialog("close");
+                    }
+                },
+                open: function () {
+                    // Center the image in the dialog
+                    $(this).dialog("widget").css({
+                        "text-align": "center"
+                    });
+                }
+            });
+
+            // When an image in the gallery is clicked
+            $("img").on("click", function () {
+                // Get the clicked image's source and alt text
+                var imgSrc = $(this).attr("src");
+                var imgAlt = $(this).attr("alt");
+
+                // Update the dialog's image source and alt text
+                $("#dialog-img").attr("src", imgSrc);
+                $("#dialog-img").attr("alt", imgAlt);
+
+                // Open the dialog
+                $("#dialog").dialog("open");
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
