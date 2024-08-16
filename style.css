@@ -103,7 +103,6 @@ body {
 
 
 nav {
-    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -113,8 +112,6 @@ nav {
 }
 
 .brandName {
-    position: absolute;
-    top: 0;
     background: linear-gradient(135deg, #ff7e5f, #feb47b, #ff6a95, #fcb045);
     -webkit-background-clip: text;
     background-clip: text;
