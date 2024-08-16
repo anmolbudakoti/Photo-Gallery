@@ -203,8 +203,8 @@ nav {
 
 @media (min-width: 320px) and (max-width: 767px) {
     .box {
-        height: 150px;
-        width: 150px;
+        height: 180px;
+        width: 180px;
     }
 
     .btns {
