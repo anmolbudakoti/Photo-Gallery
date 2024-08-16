@@ -108,7 +108,7 @@ nav {
     justify-content: center;
     align-items: center;
     /* background-color: grey; */
-    padding: 10px;
+    padding-top: 10px;
 }
 
 .brandName {
@@ -201,18 +201,26 @@ nav {
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
+    .container{
+        transform-style: flat;
+        height: 70%;
+    }
     .box {
-        height: 180px;
-        width: 180px;
+        height: 160px;
+        width: 160px;
     }
 
     .btns {
-        bottom: 40px;
+        bottom: 102px;
     }
 
     .btns .btn {
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
+    }
+    .btns .btn::before{
+        height: 12px;
+        width: 12px;
     }
 }
 
