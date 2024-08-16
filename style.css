@@ -126,6 +126,7 @@ nav {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-bottom: 3px solid #ff6f61;
     padding: 5px;
+    margin-top: 40px;
 }
 
 .brandName span {
