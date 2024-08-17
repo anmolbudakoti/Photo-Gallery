@@ -232,12 +232,12 @@ footer .Footname {
 
 @media (min-width: 1024px) and (max-width: 1439px) {
     .btns {
-        bottom: 160px;
+        bottom: 120px;
     }
 
     .box {
         position: absolute;
-        bottom: 330px;
+        bottom: 255px;
     }
 }
 
