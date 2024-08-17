@@ -40,7 +40,7 @@ body {
     transform-origin: center;
     transform-style: preserve-3d;
     transform: rotateY(calc(var(--i) * 60deg)) translateZ(400px);
-    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent 90%, #0004 100%);
 }
 
 .box span img {
@@ -189,6 +189,15 @@ nav {
     margin-bottom: 10px;
 }
 
+@media (min-width: 1024px) and (max-width: 1440px){
+    .btns {
+        bottom: 160px;
+    }
+    .box{
+        position: absolute;
+        bottom: 320px;
+    }
+}
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .btns {
