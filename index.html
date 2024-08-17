@@ -121,7 +121,7 @@
 
         // Automatic loads next image
         setInterval(function () {
-            degrees += 60;
+            degrees -= 60;
             box.style.transform = `perspective(1000px) rotateY(${degrees}deg)`;
         }, 4000);
 
